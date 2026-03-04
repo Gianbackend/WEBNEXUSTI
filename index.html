@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="nexusTI - Consultoría SAP, desarrollo web y aplicaciones móviles. Impulsamos tu negocio digital."/>
+<title>nexusTI | Consultoría SAP & Desarrollo Web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;--fg:#f2f2f2;--card:#141419;--primary:#b8e636;--primary-dark:#8ab52a;
+  --muted:#88888a;--border:#222230;--radius:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.mono{font-family:'JetBrains Mono',monospace}
+.text-gradient{background:linear-gradient(135deg,#b8e636,#3ecf8e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 2rem;border-radius:var(--radius);font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:all .25s}
+.btn-primary{background:var(--primary);color:var(--bg)}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--fg);border:1px solid var(--border)}
+.btn-outline:hover{background:#1a1a24}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+nav .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:1.25rem;font-weight:700;letter-spacing:-.5px}
+.logo span{color:var(--primary)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.875rem;color:var(--muted);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--fg)}
+.hamburger{display:none;background:none;border:none;color:var(--fg);font-size:1.5rem;cursor:pointer}
+.mobile-menu{display:none;flex-direction:column;gap:1rem;padding:1.5rem;background:var(--bg);border-bottom:1px solid var(--border)}
+.mobile-menu.open{display:flex}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;
+  background-image:linear-gradient(rgba(34,34,48,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(34,34,48,.5) 1px,transparent 1px);
+  background-size:60px 60px}
+.hero .orb1{position:absolute;top:20%;left:20%;width:400px;height:400px;background:rgba(184,230,54,.08);border-radius:50%;filter:blur(100px);pointer-events:none}
+.hero .orb2{position:absolute;bottom:20%;right:20%;width:300px;height:300px;background:rgba(62,207,142,.06);border-radius:50%;filter:blur(100px);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:800px;padding-top:80px}
+.badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;border-radius:999px;border:1px solid rgba(184,230,54,.3);background:rgba(184,230,54,.06);margin-bottom:2rem}
+.badge span{font-size:.7rem;color:var(--primary);text-transform:uppercase;letter-spacing:2px}
+.hero h1{font-size:clamp(2.5rem,7vw,5.5rem);font-weight:800;line-height:.95;margin-bottom:1.5rem}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:600px;margin:0 auto 2.5rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.trust-bar{display:flex;gap:2rem;justify-content:center;margin-top:4rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--muted)}
+.trust-item .dot{width:8px;height:8px;border-radius:50%;background:var(--primary)}
+/* SECTIONS */
+section{padding:7rem 0}
+.section-label{font-size:.7rem;color:var(--primary);text-transform:uppercase;letter-spacing:3px;display:block;margin-bottom:.75rem}
+.section-title{font-size:clamp(1.8rem,4vw,3.2rem);font-weight:700;margin-bottom:1rem}
+.section-desc{font-size:1.05rem;color:var(--muted);max-width:560px}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-header .section-desc{margin:0 auto}
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;transition:all .3s}
+.service-card:hover{border-color:rgba(184,230,54,.3);box-shadow:0 0 40px -10px rgba(184,230,54,.2)}
+.service-icon{width:44px;height:44px;border-radius:var(--radius);background:rgba(184,230,54,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;color:var(--primary);font-size:1.2rem}
+.service-card h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
+.service-card p{font-size:.875rem;color:var(--muted);line-height:1.6}
+/* ABOUT */
+.about{background:rgba(20,20,25,.5)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.highlights{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}
+.highlight{display:flex;align-items:center;gap:.75rem;font-size:.9rem;font-weight:500}
+.highlight .check{color:var(--primary);font-size:1.1rem}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;text-align:center}
+.stat-card .value{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+.stat-card .label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:.25rem}
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:960px;margin:0 auto}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+input,textarea{width:100%;padding:.75rem 1rem;border-radius:var(--radius);border:1px solid var(--border);background:var(--card);color:var(--fg);font-family:inherit;font-size:.9rem;outline:none;transition:border-color .2s}
+input:focus,textarea:focus{border-color:var(--primary)}
+textarea{resize:none}
+.contact-info{display:flex;flex-direction:column;justify-content:center;gap:2rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem}
+.contact-item .ci-icon{width:40px;height:40px;border-radius:var(--radius);background:rgba(184,230,54,.1);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0}
+.contact-item .ci-label{font-size:.875rem;font-weight:600}
+.contact-item .ci-value{font-size:.85rem;color:var(--muted)}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2.5rem 0}
+footer .inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+footer .links{display:flex;gap:2rem}
+footer .links a{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;transition:color .2s}
+footer .links a:hover{color:var(--fg)}
+footer .copy{font-size:.75rem;color:var(--muted)}
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;background:var(--card);border:1px solid var(--border);padding:1rem 1.5rem;border-radius:var(--radius);z-index:200;transform:translateY(120%);opacity:0;transition:all .4s}
+.toast.show{transform:translateY(0);opacity:1}
+.toast h4{font-size:.9rem;font-weight:600;margin-bottom:.25rem}
+.toast p{font-size:.8rem;color:var(--muted)}
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.fade-left{opacity:0;transform:translateX(-40px);transition:opacity .6s,transform .6s}
+.fade-left.visible{opacity:1;transform:translateX(0)}
+.fade-right{opacity:0;transform:translateX(40px);transition:opacity .6s,transform .6s}
+.fade-right.visible{opacity:1;transform:translateX(0)}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .about-grid,.contact-grid,.form-row{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .hero-btns{flex-direction:column;align-items:center}
+}
+
+/* TECH STACK STYLES */
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1rem;
+  max-width:900px;
+  margin:0 auto;
+}
+.tech-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.75rem 1rem;
+  text-align:center;
+  transition:all .3s;
+  cursor:default;
+}
+.tech-card:hover{
+  border-color:rgba(184,230,54,.4);
+  box-shadow:0 0 30px -5px rgba(184,230,54,.25);
+  transform:translateY(-4px);
+}
+.tech-icon{
+  font-size:2.5rem;
+  margin-bottom:.75rem;
+  display:block;
+}
+.tech-card h4{
+  font-size:.95rem;
+  font-weight:600;
+  margin-bottom:.5rem;
+}
+.tech-badge{
+  display:inline-block;
+  font-size:.65rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  padding:.25rem .75rem;
+  border-radius:999px;
+  background:rgba(184,230,54,.08);
+  border:1px solid rgba(184,230,54,.2);
+}
+
+/* PORTFOLIO STYLES */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:1.5rem;
+}
+.project-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:all .3s;
+}
+.project-card:hover{
+  border-color:rgba(184,230,54,.3);
+  box-shadow:0 8px 40px -10px rgba(184,230,54,.2);
+  transform:translateY(-4px);
+}
+.project-image{
+  width:100%;
+  height:220px;
+  overflow:hidden;
+  background:var(--bg);
+}
+.project-placeholder{
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,rgba(184,230,54,.15),rgba(62,207,142,.15));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.project-icon{
+  font-size:4rem;
+  opacity:.6;
+}
+.project-content{
+  padding:1.75rem;
+}
+.project-content h3{
+  font-size:1.15rem;
+  font-weight:600;
+  margin-bottom:.75rem;
+}
+.project-content p{
+  font-size:.875rem;
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:1.25rem;
+}
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+}
+.tag{
+  font-size:.7rem;
+  color:var(--primary);
+  background:rgba(184,230,54,.1);
+  border:1px solid rgba(184,230,54,.25);
+  padding:.35rem .75rem;
+  border-radius:var(--radius);
+  font-weight:500;
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .tech-grid{
+    grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+    gap:.75rem;
+  }
+  .tech-card{
+    padding:1.25rem .75rem;
+  }
+  .tech-icon{
+    font-size:2rem;
+  }
+  .portfolio-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <div class="container inner">
+    <a href="#inicio" class="logo">nexus<span>TI</span></a>
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn btn-primary" style="padding:.5rem 1.25rem;font-size:.8rem">Cotizar →</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
+  </div>
+  <div class="container mobile-menu" id="mobileMenu">
+    <a href="#inicio" onclick="closeMenu()">Inicio</a>
+    <a href="#servicios" onclick="closeMenu()">Servicios</a>
+    <a href="#nosotros" onclick="closeMenu()">Nosotros</a>
+    <a href="#contacto" onclick="closeMenu()">Contacto</a>
+  </div>
+</nav>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="orb1"></div>
+  <div class="orb2"></div>
+  <div class="hero-content">
+    <div class="badge fade-up"><span class="mono">Consultoría SAP · Dev Web & Apps</span></div>
+    <h1 class="fade-up">Impulsamos tu<br><span class="text-gradient">negocio digital</span></h1>
+    <p class="fade-up">Expertos en implementación SAP, desarrollo web y aplicaciones móviles. Llevamos tu empresa al siguiente nivel con tecnología de vanguardia.</p>
+    <div class="hero-btns fade-up">
+      <a href="#contacto" class="btn btn-primary">Solicitar consulta →</a>
+      <a href="#nosotros" class="btn btn-outline">Conocer más</a>
+    </div>
+    <div class="trust-bar fade-up">
+      <div class="trust-item"><div class="dot"></div>Entrega rápida</div>
+      <div class="trust-item"><div class="dot"></div>Seguridad garantizada</div>
+      <div class="trust-item"><div class="dot"></div>Código limpio</div>
+    </div>
+  </div>
+</section>
+<!-- SERVICES -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label mono">Servicios</span>
+      <h2 class="section-title">Lo que hacemos</h2>
+      <p class="section-desc">Soluciones tecnológicas integrales para empresas que buscan crecer y competir.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up"><div class="service-icon">⛁</div><h3>Consultoría SAP</h3><p>Implementación, migración y soporte de módulos SAP S/4HANA. Optimizamos tus procesos empresariales.</p></div>
+      <div class="service-card fade-up"><div class="service-icon">🖥</div><h3>Desarrollo Web</h3><p>Plataformas web con tecnologías de vanguardia. Alto rendimiento, SEO y diseño responsive.</p></div>
+      <div class="service-card fade-up"><div class="service-icon">📱</div><h3>Apps Móviles</h3><p>Aplicaciones nativas e híbridas para iOS y Android con experiencias de usuario excepcionales.</p></div>
+      <div class="service-card fade-up"><div class="service-icon">⚙</div><h3>Integración de Sistemas</h3><p>Conectamos tus herramientas y plataformas para un ecosistema digital unificado.</p></div>
+      <div class="service-card fade-up"><div class="service-icon">⟨/⟩</div><h3>Software a Medida</h3><p>Desarrollo personalizado que se adapta a las necesidades específicas de tu negocio.</p></div>
+      <div class="service-card fade-up"><div class="service-icon">👥</div><h3>Soporte & Mantenimiento</h3><p>Acompañamiento continuo, actualizaciones y soporte técnico 24/7.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="tecnologias" style="background:rgba(20,20,25,.3)">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label mono">Tecnologías</span>
+      <h2 class="section-title">Nuestro Stack Tecnológico</h2>
+      <p class="section-desc">Trabajamos con las herramientas más modernas y robustas del mercado.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card fade-up">
+        <div class="tech-icon">⚛️</div>
+        <h4>React</h4>
+        <span class="tech-badge">Frontend</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">⚡</div>
+        <h4>Vite</h4>
+        <span class="tech-badge">Build Tool</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">▲</div>
+        <h4>Next.js</h4>
+        <span class="tech-badge">Framework</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">🟢</div>
+        <h4>Node.js</h4>
+        <span class="tech-badge">Backend</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">🔥</div>
+        <h4>Firebase</h4>
+        <span class="tech-badge">Cloud</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">⛁</div>
+        <h4>SAP HANA</h4>
+        <span class="tech-badge">ERP</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">📱</div>
+        <h4>React Native</h4>
+        <span class="tech-badge">Mobile</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">🎨</div>
+        <h4>Tailwind CSS</h4>
+        <span class="tech-badge">Styling</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">📘</div>
+        <h4>TypeScript</h4>
+        <span class="tech-badge">Language</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">🐙</div>
+        <h4>Git</h4>
+        <span class="tech-badge">Version Control</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">🐳</div>
+        <h4>Docker</h4>
+        <span class="tech-badge">DevOps</span>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">☁️</div>
+        <h4>AWS</h4>
+        <span class="tech-badge">Cloud</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO / PROYECTOS -->
+<section id="proyectos">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label mono">Portfolio</span>
+      <h2 class="section-title">Proyectos Destacados</h2>
+      <p class="section-desc">Casos reales de éxito que hemos desarrollado para nuestros clientes.</p>
+    </div>
+    <div class="portfolio-grid">
+      
+      <!-- Proyecto 1: POS Repuestos -->
+      <div class="project-card fade-up">
+        <div class="project-image">
+          <div class="project-placeholder">
+            <span class="project-icon">📱</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Sistema POS Repuestos</h3>
+          <p>App móvil para gestión de inventario, ventas y facturación en tiempo real. Incluye búsqueda avanzada, control de stock y tickets digitales.</p>
+          <div class="project-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Node.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2: Monitor Importaciones -->
+      <div class="project-card fade-up">
+        <div class="project-image">
+          <div class="project-placeholder" style="background:linear-gradient(135deg,rgba(62,207,142,.15),rgba(184,230,54,.15))">
+            <span class="project-icon">📊</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Monitor de Importaciones</h3>
+          <p>Dashboard web para tracking de importaciones con integración SAP. Visualización en tiempo real de pedidos, estados y montos totales.</p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">SAP HANA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3: Integraciones SAP -->
+      <div class="project-card fade-up">
+        <div class="project-image">
+          <div class="project-placeholder" style="background:linear-gradient(135deg,rgba(184,230,54,.15),rgba(255,193,7,.15))">
+            <span class="project-icon">⚙️</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Integraciones SAP HANA</h3>
+          <p>Consultoría e implementación de módulos SAP S/4HANA. Migración de datos, optimización de procesos y desarrollo de extensiones personalizadas.</p>
+          <div class="project-tags">
+            <span class="tag">SAP HANA</span>
+            <span class="tag">ABAP</span>
+            <span class="tag">Fiori</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-left">
+        <span class="section-label mono">Nosotros</span>
+        <h2 class="section-title">Tu socio estratégico en tecnología</h2>
+        <p class="section-desc">En nexusTI combinamos experiencia en consultoría SAP con desarrollo de software moderno para ofrecer soluciones integrales. Nuestro equipo multidisciplinario trabaja junto a tu empresa para garantizar resultados medibles.</p>
+        <div class="highlights">
+          <div class="highlight"><span class="check">✓</span> Equipo certificado en SAP S/4HANA</div>
+          <div class="highlight"><span class="check">✓</span> Metodologías ágiles (Scrum & Kanban)</div>
+          <div class="highlight"><span class="check">✓</span> Soporte 24/7 para sistemas críticos</div>
+          <div class="highlight"><span class="check">✓</span> Partners tecnológicos de primer nivel</div>
+        </div>
+      </div>
+      <div class="fade-right">
+        <div class="stats-grid">
+          <div class="stat-card"><p class="value text-gradient">200+</p><p class="label">Proyectos entregados</p></div>
+          <div class="stat-card"><p class="value text-gradient">80+</p><p class="label">Clientes activos</p></div>
+          <div class="stat-card"><p class="value text-gradient">12+</p><p class="label">Años de experiencia</p></div>
+          <div class="stat-card"><p class="value text-gradient">99%</p><p class="label">Satisfacción</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label mono">Contacto</span>
+      <h2 class="section-title">¿Listo para empezar?</h2>
+      <p class="section-desc">Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form fade-left" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <input type="text" placeholder="Nombre" required/>
+          <input type="text" placeholder="Empresa"/>
+        </div>
+        <input type="email" placeholder="Email" required/>
+        <input type="tel" placeholder="Teléfono"/>
+        <textarea rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="submitBtn">Enviar mensaje ✉</button>
+      </form>
+      <div class="contact-info fade-right">
+        <div class="contact-item">
+          <div class="ci-icon">✉</div>
+          <div><p class="ci-label">Email</p><p class="ci-value">contacto@nexusti.com</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">☎</div>
+          <div><p class="ci-label">Teléfono</p><p class="ci-value">+52 (55) 1234-5678</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div><p class="ci-label">Ubicación</p><p class="ci-value">Ciudad de México, México</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="container inner">
+    <a href="#inicio" class="logo">nexus<span>TI</span></a>
+    <div class="links">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <p class="copy">© 2026 nexusTI. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <h4>Mensaje enviado</h4>
+  <p>Te responderemos en menos de 24 horas.</p>
+</div>
+<script>
+// Mobile menu
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+// Form
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=document.getElementById('submitBtn');
+  btn.textContent='Enviando...';btn.disabled=true;
+  setTimeout(()=>{
+    btn.textContent='Enviar mensaje ✉';btn.disabled=false;
+    e.target.reset();
+    const t=document.getElementById('toast');t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),3500);
+  },1000);
+}
+// Scroll animations
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:0.15});
+document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
