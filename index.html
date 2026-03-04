@@ -241,13 +241,17 @@ footer .copy{font-size:.75rem;color:var(--muted)}
     grid-template-columns:1fr;
   }
 }
+
+
 </style>
 </head>
 <body>
 <!-- NAV -->
 <nav>
   <div class="container inner">
-    <a href="#inicio" class="logo">nexus<span>TI</span></a>
+    <a href="#inicio" class="logo">
+      <img src="https://nexusti.uk/nexuslogo.jpg" alt="nexusTI" style="height:40px;vertical-align:middle">
+    </a>
     <div class="nav-links">
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
@@ -264,8 +268,9 @@ footer .copy{font-size:.75rem;color:var(--muted)}
     <a href="#contacto" onclick="closeMenu()">Contacto</a>
   </div>
 </nav>
+
 <!-- HERO -->
-<section class="hero" id="inicio">
+<section class="hero" id="inicio" style="background-image: linear-gradient(rgba(10,10,30,0.85), rgba(10,10,30,0.9)), url('https://nexusti.uk/foto1a.jpg'); background-size: cover; background-position: center;">
   <div class="orb1"></div>
   <div class="orb2"></div>
   <div class="hero-content">
@@ -283,6 +288,7 @@ footer .copy{font-size:.75rem;color:var(--muted)}
     </div>
   </div>
 </section>
+
 <!-- SERVICES -->
 <section id="servicios">
   <div class="container">
@@ -517,7 +523,7 @@ footer .copy{font-size:.75rem;color:var(--muted)}
     <p class="copy">© 2026 nexusTI. Todos los derechos reservados.</p>
   </div>
 </footer>
-<!-- TOAST -->
+<!-- TOAST sss--->
 <div class="toast" id="toast">
   <h4>Mensaje enviado</h4>
   <p>Te responderemos en menos de 24 horas.</p>
@@ -535,7 +541,7 @@ function handleSubmit(e){
     btn.textContent='Enviar mensaje ✉';btn.disabled=false;
     e.target.reset();
     const t=document.getElementById('toast');t.classList.add('show');
-    setTimeout(()=>t.classList.remove('show'),3500);
+    setTimeout(()=>t.classList.remove('show'),3500); 
   },1000);
 }
 // Scroll animations
