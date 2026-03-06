@@ -248,6 +248,266 @@ footer .copy{font-size:.75rem;color:var(--muted)}
   vertical-align: middle;
 }
 
+/* === FORM GROUPS & LABELS === */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #9bdb33;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* === SELECT DROPDOWN === */
+.contact-form select {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(155, 219, 51, 0.3);
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239bdb33' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.contact-form select:focus {
+  outline: none;
+  border-color: #9bdb33;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 3px rgba(155, 219, 51, 0.1);
+}
+
+.contact-form select option {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 12px;
+}
+
+/* === TEXTAREA === */
+.contact-form textarea {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(155, 219, 51, 0.3);
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #9bdb33;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 3px rgba(155, 219, 51, 0.1);
+}
+
+/* === CONTACT INFO H3 === */
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #9bdb33;
+}
+
+.contact-info > p {
+  color: #ccc;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+/* === FOOTER === */
+footer {
+  background: #000;
+  border-top: 1px solid rgba(155, 219, 51, 0.2);
+  padding: 60px 20px 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* === FOOTER BRAND === */
+.footer-brand .logo {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.footer-brand .logo span {
+  color: #9bdb33;
+}
+
+.footer-desc {
+  color: #999;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+/* === FOOTER SOCIAL === */
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(155, 219, 51, 0.1);
+  border: 1px solid rgba(155, 219, 51, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9bdb33;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: #9bdb33;
+  color: #000;
+  transform: translateY(-4px);
+}
+
+/* === FOOTER COLUMNS === */
+.footer-col h4 {
+  color: #9bdb33;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a,
+.footer-col ul li span {
+  color: #999;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: #9bdb33;
+  padding-left: 4px;
+}
+
+.footer-col ul li span {
+  cursor: default;
+}
+
+/* === FOOTER BOTTOM === */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(155, 219, 51, 0.1);
+}
+
+.footer-bottom .copy {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #9bdb33;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 968px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
 
 </style>
 </head>
@@ -543,75 +803,260 @@ footer .copy{font-size:.75rem;color:var(--muted)}
   <div class="container">
     <div class="section-header fade-up">
       <span class="section-label mono">Contacto</span>
-      <h2 class="section-title">¿Listo para empezar?</h2>
-      <p class="section-desc">Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.</p>
+      <h2 class="section-title">Hablemos de tu proyecto</h2>
+      <p class="section-desc">Cuéntanos tus desafíos y te proponemos soluciones a medida</p>
     </div>
     <div class="contact-grid">
-      <form class="contact-form fade-left" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <input type="text" placeholder="Nombre" required/>
-          <input type="text" placeholder="Empresa"/>
-        </div>
-        <input type="email" placeholder="Email" required/>
-        <input type="tel" placeholder="Teléfono"/>
-        <textarea rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="submitBtn">Enviar mensaje ✉</button>
-      </form>
-      <div class="contact-info fade-right">
-        <div class="contact-item">
-          <div class="ci-icon">✉</div>
-          <div><p class="ci-label">Email</p><p class="ci-value">contacto@nexusti.com</p></div>
-        </div>
+      <div class="contact-info fade-left">
+        <h3>¿Por qué elegirnos?</h3>
+        <p>Más de 19 años transformando empresas con tecnología. Nuestro equipo de expertos está listo para analizar tu situación y proponer el mejor camino de transformación digital.</p>
         <div class="contact-item">
           <div class="ci-icon">☎</div>
-          <div><p class="ci-label">Teléfono</p><p class="ci-value">+52 (55) 1234-5678</p></div>
+          <div><p class="ci-label">Teléfono</p><p class="ci-value">+51 935783468</p></div>
         </div>
         <div class="contact-item">
-          <div class="ci-icon">📍</div>
-          <div><p class="ci-label">Ubicación</p><p class="ci-value">Ciudad de México, México</p></div>
+          <div class="ci-icon">✉</div>
+          <div><p class="ci-label">Email</p><p class="ci-value">ventas@nexusti.uk</p></div>
         </div>
+        <div class="contact-item">
+  <div class="ci-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+  </div>
+  <div><p class="ci-label">Oficinas</p><p class="ci-value">Lima - Perú | Bogotá - Colombia</p></div>
+</div>
       </div>
+      <form class="contact-form fade-right" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" name="name" placeholder="Tu nombre" required/>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="tu@empresa.com" required/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" name="phone" placeholder="+51 987654321" required/>
+          </div>
+          <div class="form-group">
+            <label>Servicio de Interés</label>
+            <select name="service" required>
+              <option value="">Selecciona un servicio</option>
+              <option>SAP HANA / S/4HANA</option>
+              <option>Desarrollo Web</option>
+              <option>Backend & APIs</option>
+              <option>Integraciones</option>
+              <option>Business Intelligence</option>
+              <option>Seguridad & Cloud</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea name="message" rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="submitBtn">Enviar Mensaje ✉</button>
+      </form>
     </div>
   </div>
 </section>
+
 <!-- FOOTER -->
 <footer>
-  <div class="container inner">
-    <a href="#inicio" class="logo">nexus<span>TI</span></a>
-    <div class="links">
-      <a href="#servicios">Servicios</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#inicio" class="logo">nexus<span>TI</span></a>
+        <p class="footer-desc">Transformación digital empresarial con soluciones SAP, desarrollo de software y consultoría tecnológica.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">SAP HANA / S/4HANA</a></li>
+          <li><a href="#servicios">Desarrollo Web</a></li>
+          <li><a href="#servicios">Backend & APIs</a></li>
+          <li><a href="#servicios">Integraciones</a></li>
+          <li><a href="#servicios">Business Intelligence</a></li>
+          <li><a href="#servicios">Seguridad & Cloud</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#nosotros">Quiénes Somos</a></li>
+          <li><a href="#casos">Casos de Éxito</a></li>
+          <li><a href="#blog">Blog Técnico</a></li>
+          <li><a href="#certificaciones">Certificaciones</a></li>
+          <li><a href="#careers">Careers</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+51935783468">+51 935783468</a></li>
+          <li><a href="mailto:ventas@nexusti.uk">ventas@nexusti.uk</a></li>
+          <li><span>Lima - Perú</span></li>
+          <li><span>Bogotá - Colombia</span></li>
+        </ul>
+      </div>
     </div>
-    <p class="copy">© 2026 nexusTI. Todos los derechos reservados.</p>
+    
+    <div class="footer-bottom">
+      <p class="copy">© 2026 nexusTI. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="#privacidad">Política de Privacidad</a>
+        <a href="#terminos">Términos de Uso</a>
+        <a href="#cookies">Cookies</a>
+      </div>
+    </div>
   </div>
 </footer>
-<!-- TOAST sss--->
-<div class="toast" id="toast">
-  <h4>Mensaje enviado</h4>
-  <p>Te responderemos en menos de 24 horas.</p>
-</div>
+
+</body>
+
 <script>
 // Mobile menu
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
-// Form
+
+// === FORMULARIO CON FIREBASE ===
 function handleSubmit(e){
   e.preventDefault();
-  const btn=document.getElementById('submitBtn');
-  btn.textContent='Enviando...';btn.disabled=true;
-  setTimeout(()=>{
-    btn.textContent='Enviar mensaje ✉';btn.disabled=false;
-    e.target.reset();
-    const t=document.getElementById('toast');t.classList.add('show');
-    setTimeout(()=>t.classList.remove('show'),3500); 
-  },1000);
+  
+  const form = e.target;
+  const btn = document.getElementById('submitBtn');
+  const originalText = btn.innerHTML;
+  
+  // Validar email
+  const email = form.email.value;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  if (!emailRegex.test(email)) {
+    showNotification('❌ Por favor ingresa un email válido', 'error');
+    return false;
+  }
+  
+  // Validar teléfono
+  const phone = form.phone.value;
+  if (phone.length < 9) {
+    showNotification('❌ Por favor ingresa un teléfono válido', 'error');
+    return false;
+  }
+  
+  // Validar mensaje
+  const message = form.message.value;
+  if (message.length < 10) {
+    showNotification('❌ El mensaje debe tener al menos 10 caracteres', 'error');
+    return false;
+  }
+  
+  // Deshabilitar botón
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Enviando...';
+  
+  // Datos del formulario
+  const formData = {
+    name: form.name.value,
+    email: email,
+    phone: phone,
+    service: form.service.value,
+    message: message
+  };
+  
+  // Enviar a Firebase
+  fetch('https://us-central1-nexusti-web.cloudfunctions.net/sendContactEmail', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (!response.ok) throw new Error('Error en el servidor');
+    return response.json();
+  })
+  .then(data => {
+    if (data.success) {
+      showNotification('✅ ¡Mensaje enviado! Te contactaremos pronto.', 'success');
+      form.reset();
+    } else {
+      throw new Error(data.error || 'Error al enviar');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    showNotification('❌ Error al enviar. Intenta nuevamente.', 'error');
+  })
+  .finally(() => {
+    btn.disabled = false;
+    btn.innerHTML = originalText;
+  });
 }
+
+// === NOTIFICACIONES ===
+function showNotification(message, type) {
+  const notification = document.createElement('div');
+  notification.textContent = message;
+  
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: ${type === 'success' ? '#9bdb33' : '#ff4444'};
+    color: ${type === 'success' ? '#000' : '#fff'};
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    z-index: 10000;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 400px;
+  `;
+  
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.style.animation = 'slideOut 0.3s ease';
+    setTimeout(() => notification.remove(), 300);
+  }, 5000);
+}
+
 // Scroll animations
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
 },{threshold:0.15});
-document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>observer.observe(el));
+
+// Esperar a que el DOM cargue
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>observer.observe(el));
+});
 </script>
-</body>
 </html>
