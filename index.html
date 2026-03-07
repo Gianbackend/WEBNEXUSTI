@@ -508,6 +508,34 @@ footer {
     opacity: 0;
   }
 }
+.footer-social .icon-j {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(191, 255, 0, 0.3);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: rgba(191, 255, 0, 0.1);
+}
+
+.footer-social .icon-j:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(191, 255, 0, 0.3);
+  transform: translateY(-3px);
+  background: var(--primary);
+}
+
+.footer-social .icon-j svg text {
+  fill: var(--primary);
+  transition: fill 0.3s ease;
+}
+
+.footer-social .icon-j:hover svg text {
+  fill: #000;
+}
 
 </style>
 </head>
@@ -892,6 +920,12 @@ footer {
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
             </svg>
           </a>
+          <a href="#" class="icon-j" aria-label="J">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <text x="35%" y="72%" text-anchor="middle" font-family="Georgia, Times, serif" font-size="20" font-weight="bold" font-style="italic" fill="currentColor">J</text>
+    <text x="70%" y="72%" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="currentColor">♥</text>
+  </svg>
+</a>
         </div>
       </div>
       
